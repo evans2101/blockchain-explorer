@@ -184,6 +184,9 @@ const Profit = styled.div`
   border: 1px solid #fff;
   border-radius: 5px;
   padding: 3px;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 const Card2 = styled.div`
   font-weight: bold;
@@ -201,6 +204,10 @@ const SubContentt = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0px;
+  }
 `;
 
 const SearchBox = styled.input`
@@ -212,8 +219,9 @@ const SearchBox = styled.input`
   width: 40%;
   border-radius: 10px;
 
-  @media (max-width: 767px) {
-    display: none;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0;
   }
 `;
 
@@ -227,12 +235,21 @@ const Content = styled.div`
   margin: 0 25px;
   border-radius: 10px;
   border: 1px solid white;
+  @media (max-width: 768px) {
+    margin: 0;
+    border: none;
+    padding: 0;
+  }
 `;
 
 const CardGroup1 = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  @media (max-width: 768px) {
+    gap: 10px;
+    width: auto;
+  }
 `;
 const CardGroup2 = styled.div`
   display: grid;
@@ -244,6 +261,9 @@ const SubContent = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   margin-top: 50px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 
 const CardGroup3 = styled.div`
@@ -252,6 +272,9 @@ const CardGroup3 = styled.div`
   border: 1px solid white;
   margin: 20px 0;
   text-align: center;
+  @media (max-width: 768px) {
+      padding: 10px
+  }
 `;
 
 const Card1 = styled.div`
@@ -265,6 +288,12 @@ const Card1 = styled.div`
 
   &:hover {
     background-color: #333;
+  }
+  @media (max-width: 768px) {
+    font-size: 8px;
+    padding: 10px;
+    width: auto;
+    margin: 10px 0;
   }
 `;
 
@@ -293,15 +322,24 @@ const TitleCard3 = styled.div`
   margin-bottom: 8px;
   padding-right: 30px;
   color: #20f8fd;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 const Description = styled.div`
   color: #20f8fd;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 const Description3 = styled.div`
   color: #20f8fd;
   text-align: flex-start;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 export default Index;

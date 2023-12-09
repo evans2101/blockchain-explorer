@@ -74,12 +74,20 @@ const Content = styled.div`
   text-align: center;
   border-radius: 10px;
   border: 1px solid white;
+  @media (max-width: 768px) {
+  margin: 0 10px;
+  border: none;
+  padding: 0;
+  }
 `;
 
 const CardGroup1 = styled.div`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 15px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const CardGroup2 = styled.div`
@@ -95,6 +103,11 @@ const CardGroup3 = styled.div`
   border: 1px solid white;
   margin: 20px 0;
   text-align: left;
+  @media (max-width: 768px) {
+    border: none;
+    padding: 0;
+    font-size: 11px;
+  }
 `;
 
 const Card = styled.div`
