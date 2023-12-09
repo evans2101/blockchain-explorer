@@ -3,8 +3,12 @@ import styled from "styled-components";
 import Header from "../../components/header";
 import LineCharts from "../../assets/Group 3661.png";
 import PieCharts from "../../assets/Group 3662.png";
-import { Link } from "react-router-dom"; 
-
+import { Link } from "react-router-dom";
+import Image1 from "../../assets/Group 3663.png";
+import Image2 from "../../assets/Group 3664.png";
+import Icon1 from "../../assets/Group 3665.png";
+import Icon2 from "../../assets/Group.png";
+import Icon3 from "../../assets/Group 3640.png";
 
 const data = [
   {
@@ -103,14 +107,46 @@ function Index() {
             {data.map((item, index) => (
               <div>
                 <Card1 key={index}>
-                  <TitleCard1>{item.title1}</TitleCard1>
-                  <Description>{item.value1}</Description>
-                  <div style={{ padding: "20px 0" }}>
-                    <TitleCard1>{item.title2}</TitleCard1>
-                    <Description>{item.value2}</Description>
-                  </div>
-                  <TitleCard1>{item.title3}</TitleCard1>
-                  <Description>{item.value3}</Description>
+                  <span
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span>
+                      <TitleCard1>{item.title1}</TitleCard1>
+                      <Description>{item.value1}</Description>
+                    </span>
+                    <img src={Icon1} alt="" />
+                  </span>
+                  <span
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      padding: "25px 0",
+                    }}
+                  >
+                    <span>
+                      <TitleCard1>{item.title2}</TitleCard1>
+                      <Description>{item.value2}</Description>
+                    </span>
+                    <img src={Icon2} alt="" />
+                  </span>
+                  <span
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span>
+                      <TitleCard1>{item.title3}</TitleCard1>
+                      <Description>{item.value3}</Description>
+                    </span>
+                    <img src={Icon3} alt="" />
+                  </span>
                 </Card1>
               </div>
             ))}
@@ -128,7 +164,7 @@ function Index() {
         </SubContentt>
         <SubContent>
           <CardGroup3>
-            <span style={{ fontWeight: "bold" }}>Latest Block</span>
+            <Latest>Latest Block</Latest>
             {dataBlock.map((item, index) => (
               <Card3 key={index}>
                 <Link
@@ -136,9 +172,18 @@ function Index() {
                   to="/blockdetails"
                   target="blank"
                 >
-                  <TitleCard3>{item.title}</TitleCard3>
+                  <span style={{ display: "flex" }}>
+                    <Imagess src={Image1} alt="" />
+                    <Pem>
+                      <TitleCard3>{item.title}</TitleCard3>
+                      <Timer>9 Seconds Ago</Timer>
+                    </Pem>
+                  </span>
                 </Link>
-                Validated By{""}
+                <span style={{ display: "flex", flexDirection: "column" }}>
+                  <Validate>Validated By{""}</Validate>
+                  <Txs>0 Txs</Txs>
+                </span>
                 <Description3>{item.value}</Description3>
                 <Profit>{item.profit}</Profit>
               </Card3>
@@ -146,11 +191,24 @@ function Index() {
             <Button>View All Block</Button>
           </CardGroup3>
           <CardGroup3>
-            <span style={{ fontWeight: "bold" }}>Lastest Transactions</span>
+            <Latest>Lastest Transactions</Latest>
             {dataTrans.map((item, index) => (
               <Card3 key={index}>
-                <TitleCard3>{item.title}</TitleCard3>Validated By{""}
-                <Description3>{item.value}</Description3>
+                <span style={{ display: "flex" }}>
+                  <Imagess src={Image2} alt="" />
+                  <Pem>
+                    <TitleCard3>{item.title}</TitleCard3>
+                    <Timer>9 Seconds Ago</Timer>
+                  </Pem>
+                </span>{" "}
+                <span style={{ display: "flex", flexDirection: "column" }}>
+                  <Description3>
+                    From <span>{item.value}</span>
+                  </Description3>
+                  <Description3>
+                    To <span>0x9incdc8ysdfklsnd....</span>
+                  </Description3>
+                </span>
                 <Profit>{item.profit}</Profit>
               </Card3>
             ))}
@@ -168,12 +226,39 @@ const Title = styled.div`
   padding: 20px 25px;
   font-weight: bold;
 `;
+const Timer = styled.div`
+  color: #9e9e9e;
+  font-size: 14px;
+`;
+
+const Latest = styled.div`
+  text-align: center;
+  font-weight: bold;
+`;
+
+const Validate = styled.div`
+  padding: 0 0 7px 0;
+`;
+
+const Txs = styled.div``;
+
+const Imagess = styled.img`
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+`;
+
+const Pem = styled.div`
+  padding-left: 20px;
+`;
 
 const Button = styled.div`
   background-color: #0182aa;
   margin: 10px 0;
   padding: 15px 0 20px 0;
   border-radius: 10px;
+  text-align: center;
   cursor: pointer;
   &:hover {
     background-color: #333;
@@ -207,7 +292,6 @@ const SubContentt = styled.div`
   gap: 15px;
   @media (max-width: 768px) {
     grid-template-columns: repeat(1, 1fr);
-    gap: 0px;
   }
 `;
 
@@ -222,7 +306,7 @@ const SearchBox = styled.input`
 
   @media (max-width: 768px) {
     width: 100%;
-    margin: 0;
+    margin-left: -10px;
   }
 `;
 
@@ -237,7 +321,7 @@ const Content = styled.div`
   border-radius: 10px;
   border: 1px solid white;
   @media (max-width: 768px) {
-    margin: 0;
+    margin: 0 15px;
     border: none;
     padding: 0;
   }
@@ -248,14 +332,16 @@ const CardGroup1 = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
   @media (max-width: 768px) {
-    gap: 10px;
-    width: auto;
+    grid-template-columns: repeat(1, 1fr);
   }
 `;
 const CardGroup2 = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 `;
 const SubContent = styled.div`
   display: grid;
@@ -272,9 +358,9 @@ const CardGroup3 = styled.div`
   border-radius: 10px;
   border: 1px solid white;
   margin: 20px 0;
-  text-align: center;
+  // text-align: center;
   @media (max-width: 768px) {
-      padding: 10px
+    padding: 10px;
   }
 `;
 
@@ -283,7 +369,6 @@ const Card1 = styled.div`
   color: white;
   padding: 32px 20px;
   transition: background-color 0.3s ease;
-  cursor: pointer;
   border-radius: 10px;
   border: 1px solid white;
 
@@ -292,7 +377,7 @@ const Card1 = styled.div`
   }
   @media (max-width: 768px) {
     font-size: 8px;
-    padding: 10px;
+    padding: 10px 20px;
     width: auto;
     margin: 10px 0;
   }
@@ -303,7 +388,6 @@ const Card3 = styled.div`
   color: white;
   padding: 30px 20px 20px 20px;
   transition: background-color 0.3s ease;
-  cursor: pointer;
   display: flex;
   border-radius: 20px;
   border-bottom: 1px solid #fff;
@@ -311,6 +395,9 @@ const Card3 = styled.div`
 
   &:hover {
     background-color: #333;
+  }
+  @media (max-width: 768px) {
+    font-size: 10px;
   }
 `;
 
