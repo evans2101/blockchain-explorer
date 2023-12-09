@@ -9,8 +9,13 @@ const Nav = styled.nav`
   background-color: black;
   color: #fff;
   padding: 1rem;
-    
-  `;
+
+  /* Add padding and flex-wrap for better spacing */
+  @media (max-width: 768px) {
+    padding: 1rem 0.5rem;
+    flex-wrap: wrap;
+  }
+`;
 
 const NavItem = styled.li`
   list-style: none;
@@ -24,6 +29,11 @@ const NavItem = styled.li`
     &:hover {
       color: #bada55;
     }
+  }
+
+  /* Add margin bottom for better spacing in mobile view */
+  @media (max-width: 768px) {
+    margin: 0.5rem 1rem;
   }
 `;
 
@@ -62,8 +72,19 @@ const MobileNav = styled.ul`
 
   @media (max-width: 767px) {
     display: flex;
+    /* Add background color and padding for better visibility */
+    background-color: black;
+    padding: 1rem;
+    /* Position the mobile menu at the top */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
   }
 `;
+
 const SearchBox = styled.input`
   padding: 0.5rem;
   margin: 0 1rem;
