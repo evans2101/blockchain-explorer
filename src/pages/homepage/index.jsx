@@ -5,6 +5,7 @@ import LineCharts from "../../assets/Group 3661.png";
 import PieCharts from "../../assets/Group 3662.png";
 import { Link } from "react-router-dom"; 
 
+
 const data = [
   {
     title1: "Validators",
