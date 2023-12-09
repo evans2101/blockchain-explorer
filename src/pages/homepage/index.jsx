@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Header from "../../components/header";
 import LineCharts from "../../assets/Group 3661.png";
 import PieCharts from "../../assets/Group 3662.png";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"; 
 
 const data = [
   {
